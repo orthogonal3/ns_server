@@ -628,6 +628,7 @@ parse_stats_params(Params) ->
                             end
                    end,
     {Step0, Period, Count0} = case proplists:get_value("zoom", Params) of
+                                  "instant" -> {1, minute, 1};
                                   "minute" -> {1, minute, 60};
                                   "hour" -> {60, hour, 900};
                                   "day" -> {1440, day, 1440};
